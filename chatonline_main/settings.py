@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'chatapp',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -67,6 +69,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'chatonline_main.wsgi.application'
+ASGI_APPLICATION = 'chatonline_main.asgi.application'
+
 
 
 # Database
