@@ -1,0 +1,1 @@
+# This is the Real Time Chat Application in Django using Web sockets.
