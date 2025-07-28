@@ -72,6 +72,13 @@ WSGI_APPLICATION = 'chatonline_main.wsgi.application'
 ASGI_APPLICATION = 'chatonline_main.asgi.application'
 
 
+CHANNELS_LAYERS = {
+    'default': {
+        'BACKEND':'channels.layers.InMemoryChannelLayer'
+    }
+}
+
+
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
