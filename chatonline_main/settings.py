@@ -69,10 +69,10 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'chatonline_main.wsgi.application'
-ASGI_APPLICATION = 'chatonline_main.asgi.application'
+ASGI_APPLICATION = 'chatonline_maiggn.asgi.application'
 
 
-CHANNELS_LAYERS = {
+CHANNEL_LAYERS = {
     'default': {
         'BACKEND':'channels.layers.InMemoryChannelLayer'
     }
