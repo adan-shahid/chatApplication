@@ -5,13 +5,14 @@
                 <button type="submit" value="submit" >Send</button>
         </form>
 
+        //CONNECTING MY FRONTEND WITH THE CHANNELS BACNEND.
 {{ chatroom.slug|json_script:"json-chatroomname" }}
 
 <script>
         const chatRoomName =  JSON.parse(document.getElementById('json-chatroomname').textContent);
         const chatSocket = new WebSocket(
-                'ws://'
-                +window.location.host 
+                'ws://' //its the protocol
+                +window.location.host //getting host name dynamically
                 +'/ws/'
                 +chatRoomName
                 +'/'
