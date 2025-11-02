@@ -23,9 +23,9 @@ class chatConsumer(AsyncWebsocketConsumer):
         )
 
 # HERE WE ARE RECIEVING THE MESSAGE FROM THE FRONTEND
-    async def recieve(self, message_data):
+    async def recieve(self, text_data):
         # LOAD THE MESSAGE DATA, IN ORDER TO DECODE IT
-        data = json.loads(message_data) 
+        data = json.loads(text_data) 
         # EXTRAACT DATA FROM MESSAGE/
         message = data['message']
         username = data['username']

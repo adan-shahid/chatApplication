@@ -19,7 +19,15 @@
                 +'/'
         );
         chatSocket.onmessage = function(e){
-                console.log("This is a message.");
+                // console.log("This is a message.");
+                const data = JSON.parse(e.data)
+                if (data.message){
+                        console.log("Recieved message to client is", data.message)
+
+                }else{
+                        alert('The message was empty.')
+                }
+
         }
         chatSocket.onclose = function(e){
                 console.log("Socket Closed!");
@@ -39,7 +47,6 @@
                         'message':message,
                         'username':username,
                         'room':chatRoomName,
-
                 }))
                 // AFTER MESSAGE IS SEND, INPUT SHOULD BE EMPTY
                 messageInput.value = ""
