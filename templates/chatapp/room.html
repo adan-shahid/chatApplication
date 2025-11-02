@@ -5,11 +5,12 @@
                 <button id="send-button" type="submit" >Send</button>
         </form>
 
-        //CONNECTING MY FRONTEND WITH THE CHANNELS BACNEND.
+        <!-- //CONNECTING MY FRONTEND WITH THE CHANNELS BACNEND. -->
 {{ chatroom.slug|json_script:"json-chatroomname" }}
-
+{{ request.user.username|json_script:"json-username"}}
 <script>
         const chatRoomName =  JSON.parse(document.getElementById('json-chatroomname').textContent);
+        const username = JSON.parse(document.getElementById('json-username').textContent)
         const chatSocket = new WebSocket(
                 'ws://' //its the protocol
                 +window.location.host //getting host name dynamically
@@ -32,6 +33,16 @@
                 const messageInput = document.getElementById('input-message')
                 const message = messageInput.value
                 console.log(message)
+                
+
+                chatSocket.send(JSON.stringify({
+                        'message':message,
+                        'username':username,
+                        'room':chatRoomName,
+
+                }))
+                // AFTER MESSAGE IS SEND, INPUT SHOULD BE EMPTY
+                messageInput.value = ""
                 
         }
 </script>
