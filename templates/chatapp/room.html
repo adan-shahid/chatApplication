@@ -1,8 +1,8 @@
 {{chatroom}}
 
  <form method="post">
-                <input type="text" name="" placeholder="Enter your message">
-                <button type="submit" value="submit" >Send</button>
+                <input id="input-message" type="text" name="" placeholder="Enter your message">
+                <button id="send-button" type="submit" >Send</button>
         </form>
 
         //CONNECTING MY FRONTEND WITH THE CHANNELS BACNEND.
@@ -22,5 +22,16 @@
         }
         chatSocket.onclose = function(e){
                 console.log("Socket Closed!");
+        }
+
+        // GETTING THE ACCESS TO THE SUBMIT BUTTON. ON CLICKING THIS FUNCTION IS CALLED.
+        document.getElementById('send-button').onclick = function(e){
+                // PREVENT THE DEFAUTL BEHAVIOUR OF ONCLICK, WHICH IS TO REFRESH THE PAGE. WHICH WE DON'T WANT
+                e.preventDefault()
+
+                const messageInput = document.getElementById('input-message')
+                const message = messageInput.value
+                console.log(message)
+                
         }
 </script>
