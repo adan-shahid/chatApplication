@@ -17,7 +17,7 @@
                 +'/ws/'
                 +chatRoomName
                 +'/'
-        );
+        )
         chatSocket.onmessage = function(e){
                 // console.log("This is a message.");
                 const data = JSON.parse(e.data)

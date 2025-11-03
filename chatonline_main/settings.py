@@ -31,14 +31,16 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'daphne',
+    'chatapp',
+    'channels',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'chatapp',
-    'channels',
+    
 ]
 
 MIDDLEWARE = [
@@ -69,7 +71,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'chatonline_main.wsgi.application'
-ASGI_APPLICATION = 'chatonline_maiggn.asgi.application'
+ASGI_APPLICATION = 'chatonline_main.asgi.application'
+
 
 
 CHANNEL_LAYERS = {
